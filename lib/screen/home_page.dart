@@ -7,6 +7,7 @@ import '../widget/box_image.dart';
 import '../widget/box_stock.dart';
 import '../widget/input_field.dart';
 import '../widget/plus_minus.dart';
+import 'login_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,6 +15,21 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer:  Drawer(
+          child: SafeArea(
+            child: Column(
+                    children: [
+                      ListTile(
+                        title: Text("Sign in", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                        trailing: Icon(Icons.logout),
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: ((context) =>  LoginPage()))
+                          );
+                        },
+                      )
+                      ],
+                  ),
+          )),
       appBar: AppBar(
         title: const Text(
           'Stock App',
@@ -34,10 +50,14 @@ class HomePage extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.all(8),
                     decoration: const BoxDecoration(
-                        color: ColorConstant.primaryColor, shape: BoxShape.circle),
+                        color: ColorConstant.primaryColor,
+                        shape: BoxShape.circle),
                     child: const Text(
                       "1",
-                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ))
             ],
@@ -68,7 +88,7 @@ class HomePage extends StatelessWidget {
                       ))
                 ],
               ),
-        
+
               //Stock Box
               const SizedBox(
                 height: 20,
@@ -97,12 +117,12 @@ class HomePage extends StatelessWidget {
                 boxImage: ImageConstant.beer,
                 textBox: 'Beer',
                 textBox2: 'Stock : 1 Pack',
-              ),   
-        
+              ),
+
               const SizedBox(
                 height: 250,
               ),
-        
+
               const PlusAndMinus()
             ],
           ),

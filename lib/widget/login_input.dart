@@ -8,14 +8,14 @@ class LoginInput extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: 50,
-      child: ElevatedButton(
+      child: ElevatedButton( 
         onPressed: () {},
-        child: Text(
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.green)),
+        child: const Text(
           "Login",
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
-        style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(Colors.green)),
       ),
     );
   }
