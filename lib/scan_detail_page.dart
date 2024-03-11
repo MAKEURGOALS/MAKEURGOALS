@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stockapp/constant/color_constant.dart';
 import 'package:stockapp/constant/image_constant.dart';
 
 import 'widget/button.dart';
@@ -42,7 +43,7 @@ class ScanDetailPage extends StatelessWidget {
                 const PlusAndMinus(),
                 const SizedBox(height: 30,),
                 
-                const ButtonOut()
+                const ButtonOut(selectedColor: ColorConstant.primaryColor,)
                 
                 
                 
