@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:stockapp/constant/color_constant.dart';
 import 'package:stockapp/constant/image_constant.dart';
 
-import 'widget/button.dart';
-import 'widget/plus_minus.dart';
+import '../widget/button.dart';
+import '../widget/plus_minus.dart';
 
 class ScanDetailPage extends StatelessWidget {
   const ScanDetailPage({super.key});
