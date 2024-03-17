@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:stockapp/feature/login_and_register/login_page.dart';
+
+
 
 
 
@@ -17,8 +21,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        fontFamily: GoogleFonts.suwannaphum().fontFamily,
+        
       ),
-      home: const HomePage(),
+      home: const LoginPage(),
     );
   }
 }

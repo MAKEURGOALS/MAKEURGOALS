@@ -3,11 +3,11 @@ import 'package:stockapp/constant/color_constant.dart';
 import 'package:stockapp/constant/icons_constant.dart';
 import 'package:stockapp/constant/image_constant.dart';
 
-import '../widget/box_image.dart';
-import '../widget/box_stock.dart';
-import '../widget/input_field.dart';
-import '../widget/plus_minus.dart';
-import 'login_page.dart';
+import '../../widget/box_image.dart';
+import '../../widget/box_stock.dart';
+import '../../widget/input_field.dart';
+import '../../widget/plus_minus.dart';
+import '../login_and_register/login_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
