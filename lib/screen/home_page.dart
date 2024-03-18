@@ -15,21 +15,22 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer:  Drawer(
+      drawer: Drawer(
           child: SafeArea(
-            child: Column(
-                    children: [
-                      ListTile(
-                        title: Text("Sign in", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                        trailing: Icon(Icons.logout),
-                        onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: ((context) =>  LoginPage()))
-                          );
-                        },
-                      )
-                      ],
-                  ),
-          )),
+        child: Column(
+          children: [
+            ListTile(
+              title: Text("Sign in",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              trailing: Icon(Icons.logout),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginPage()));
+              },
+            )
+          ],
+        ),
+      )),
       appBar: AppBar(
         title: const Text(
           'Stock App',
