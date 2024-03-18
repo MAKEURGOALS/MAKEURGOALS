@@ -4,10 +4,17 @@ import 'package:stockapp/constant/image_constant.dart';
 import 'register_page.dart';
 import 'widget/input_text_field.dart';
 import 'widget/login_input.dart';
+import 'widget/pwd_text_field.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  bool _isEye = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,9 +56,16 @@ class LoginPage extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  const InputTextfield(
-                    iconText: Icon(Icons.password),
-                    textInput: 'Password',
+                  PassWordTextField(
+                    textLabel: 'Password',
+                    icons:
+                        Icon(_isEye ? Icons.visibility : Icons.visibility_off),
+                    obscurText: _isEye,
+                    onPressed: () {
+                      setState(() {
+                        _isEye = !_isEye;
+                      });
+                    },
                   ),
                   const SizedBox(
                     height: 40,
@@ -71,6 +85,10 @@ class LoginPage extends StatelessWidget {
                   ),
                   const LoginInput(),
                   const SizedBox(
+                    height: 10,
+                  ),
+                 const Divider(color: Colors.black,),
+                 const SizedBox(
                     height: 10,
                   ),
                   Row(

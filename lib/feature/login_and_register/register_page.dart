@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:stockapp/feature/login_and_register/login_page.dart';
 
 import '../../constant/image_constant.dart';
 import 'widget/input_text_field.dart';
 import 'widget/login_input.dart';
+import 'widget/pwd_text_field.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  bool _isEye = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,14 +31,14 @@ class RegisterPage extends StatelessWidget {
                       Image.asset(
                         ImageConstant.soutsakaLogo,
                         width: 100,
-                      ).animate().animate().fade().scaleY()
+                      )
                     ],
                   ),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                       Text(
-                        "Login",
+                      Text(
+                        "Register",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -50,16 +56,28 @@ class RegisterPage extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  const InputTextfield(
-                    iconText: Icon(Icons.password),
-                    textInput: 'Password',
+                  PassWordTextField(
+                    textLabel: 'Password',
+                    icons: Icon(_isEye ? Icons.visibility : Icons.visibility_off),
+                    obscurText: _isEye,
+                    onPressed: (){
+                      setState(() {
+                      _isEye =  !_isEye;
+                      });
+                    },
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  const InputTextfield(
-                    iconText: Icon(Icons.password),
-                    textInput: 'Confirm Password',
+                   PassWordTextField(
+                    textLabel: 'Confirm Password',
+                    icons: Icon(_isEye ? Icons.visibility : Icons.visibility_off),
+                    obscurText: _isEye,
+                    onPressed: (){
+                      setState(() {
+                      _isEye =  !_isEye;
+                      });
+                    },
                   ),
                   const SizedBox(
                     height: 40,
@@ -96,7 +114,9 @@ class RegisterPage extends StatelessWidget {
                                   fontSize: 16, fontWeight: FontWeight.bold))),
                     ],
                   ),
-                 const  SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Image.asset(
                     ImageConstant.student,
                     width: 400,
