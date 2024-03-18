@@ -20,10 +20,11 @@ class HomePage extends StatelessWidget {
             child: Column(
                     children: [
                       ListTile(
-                        title: Text("Sign in", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                        trailing: Icon(Icons.logout),
+                        title: const Text("Sign in", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                        trailing: const Icon(Icons.logout),
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: ((context) =>  LoginPage()))
+                          Navigator.pop(context);
+                          Navigator.push(context, MaterialPageRoute(builder: ((context) =>  const LoginPage()))
                           );
                         },
                       )

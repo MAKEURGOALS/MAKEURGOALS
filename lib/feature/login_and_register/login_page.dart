@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stockapp/constant/image_constant.dart';
+import 'package:stockapp/feature/home/home_page.dart';
 
 import 'register_page.dart';
 import 'widget/input_text_field.dart';
@@ -18,6 +19,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SafeArea(
         child: Center(
           child: Padding(
@@ -83,7 +85,9 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(
                     height: 20,
                   ),
-                  const LoginInput(),
+                   LoginInput(
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomePage())),
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
