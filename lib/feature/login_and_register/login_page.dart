@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stockapp/constant/image_constant.dart';
+import 'package:stockapp/feature/for_got_password_page.dart';
 import 'package:stockapp/feature/home/home_page.dart';
 
 import 'register_page.dart';
@@ -61,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                   PassWordTextField(
                     textLabel: 'Password',
                     icons:
-                        Icon(_isEye ? Icons.visibility : Icons.visibility_off),
+                        Icon(_isEye ? Icons.visibility_off : Icons.visibility),
                     obscurText: _isEye,
                     onPressed: () {
                       setState(() {
@@ -69,15 +70,22 @@ class _LoginPageState extends State<LoginPage> {
                       });
                     },
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 40,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text(
-                          "For got Password ?",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
+                        TextButton(
+                          onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ForgotPassword())),
+                          child: const Text(
+                            "For got Password ?",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
                         )
                       ],
                     ),
@@ -85,14 +93,20 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(
                     height: 20,
                   ),
-                   LoginInput(
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomePage())),
+                  LoginInput(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomePage())),
+                    tileButton: 'Login',
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                 const Divider(color: Colors.black,),
-                 const SizedBox(
+                  const Divider(
+                    color: Colors.black,
+                  ),
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(

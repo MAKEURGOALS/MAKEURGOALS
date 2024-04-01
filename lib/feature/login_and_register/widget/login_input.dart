@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class LoginInput extends StatelessWidget {
-  const LoginInput({super.key, this.onTap});
+  const LoginInput({super.key, this.onTap, required this.tileButton});
   final void Function()? onTap;
+  final String tileButton;
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +22,10 @@ class LoginInput extends StatelessWidget {
       ),
       child:  InkWell(
         onTap: onTap,
-        child: const Center(
+        child:  Center(
           child: Text(
-            "Login",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white),
+            tileButton,
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white),
           ),
         ),
       ),

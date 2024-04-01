@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stockapp/feature/home/home_page.dart';
-import 'package:stockapp/feature/login_and_register/login_page.dart';
 
 
 

@@ -95,7 +95,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   const SizedBox(
                     height: 20,
                   ),
-                  const LoginInput(),
+                  const LoginInput(tileButton: 'Register',),
                   const SizedBox(
                     height: 20,
                   ),
