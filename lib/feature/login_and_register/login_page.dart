@@ -17,6 +17,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool _isEye = true;
+  bool _isLoading = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,12 +95,27 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(
                     height: 20,
                   ),
-                  LoginInput(
-                    onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const HomePage())),
+                  _isLoading ?const CircularProgressIndicator( )
+                  : LoginInput(
                     tileButton: 'Login',
+                    onTap: () {
+                      setState(() {
+                        _isLoading = true; // Set loading state to true
+                      });
+                      // Simulate a delay for 3 seconds
+                      Future.delayed(const Duration(seconds: 3), () {
+                        setState(() {
+                          _isLoading = false; // Set loading state to false after 3 seconds
+                        });
+                        // Navigate to LoginPage after resetting password
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
+                          ),
+                        );
+                      });
+                    },
                   ),
                   const SizedBox(
                     height: 10,
